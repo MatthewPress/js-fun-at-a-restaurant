@@ -12,7 +12,6 @@ function refundOrder(orderNum, deliveryOrders) {
   for (var i = 0; i < deliveryOrders.length; i++) {
     if (orderNum === deliveryOrders[i].orderNumber) {
       deliveryOrders.splice(i, 1);
-      // console.log(deliveryOrders.splice(deliveryOrders[i], 1));
     }
     else {
       continue;
@@ -33,18 +32,28 @@ function listItems(deliveryOrders) {
 // searchOrder
 
 function searchOrder(deliveryOrders, item) {
+
   var itemsList = [];
   for (var i = 0; i < deliveryOrders.length; i++) {
-    itemsList.push(deliveryOrders[i].item);
+    if (deliveryOrders[i].item === item) {
+      return true;
+    }
   }
+  return false;
 
-  var exists = itemsList.indexOf(item);
-  if (exists === -1) {
-    return false;
-  }
-  else {
-    return true;
-  }
+  // Different Solution
+    // var itemsList = [];
+    // for (var i = 0; i < deliveryOrders.length; i++) {
+    //   itemsList.push(deliveryOrders[i].item);
+    // }
+    //
+    // if (itemsList.indexOf(item) === -1) {
+    //   return false;
+    // }
+    // else {
+    //   return true;
+    // }
+
 }
 
 module.exports = {

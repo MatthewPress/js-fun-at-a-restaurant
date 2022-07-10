@@ -9,7 +9,7 @@ function createRestaurant(name) {
       dinner: []
     }
   }
-  return restaurant
+  return restaurant;
 }
 
 // addMenuItem,
@@ -43,7 +43,7 @@ function addMenuItem(restaurant, menuItem) {
       return restaurant;
     }
   }
-
+  
 }
 
 
@@ -53,7 +53,7 @@ function addMenuItem(restaurant, menuItem) {
 
 
 function removeMenuItem(restaurant, menuItem, menuType) {
-console.log("Hi");
+
   if (menuType === "breakfast") {
     for (var i = 0; i < restaurant.menus.breakfast.length; i++) {
       if (menuItem === restaurant.menus.breakfast[i].name) {
@@ -67,13 +67,9 @@ console.log("Hi");
     }
     return `Sorry, we don't sell ${menuItem}, try adding a new recipe!`;
   }
-console.log("Hello");
-  if (menuType === "lunch") {
-    console.log("Howdy", restaurant.menus.lunch.length);
 
+  if (menuType === "lunch") {
     for (var i = 0; i < restaurant.menus.lunch.length; i++) {
-      console.log("Ni Hao");
-      console.log(menuItem, restaurant.menus.lunch[i].name, i);
       if (menuItem === restaurant.menus.lunch[i].name) {
         restaurant.menus.lunch.splice(i, 1);
         var result = `No one is eating our ${menuItem} - it has been removed from the ${menuType} menu!`;
@@ -86,39 +82,7 @@ console.log("Hello");
     return `Sorry, we don't sell ${menuItem}, try adding a new recipe!`;
   }
 
-  // console.log(restaurant.menus.breakfast.indexOf(menuItem));
-
-    // if (menuType === "breakfast") {
-    //   if (restaurant.menus.breakfast.indexOf(menuItem) >= 0) {
-    //     for (var i = 0; i < restaurant.menus.breakfast.length; i++) {
-    //       if (menuItem === restaurant.menus.breakfast[i].name) {
-    //         restaurant.menus.breakfast.splice(i, 1);
-    //         return `No one is eating our ${menuItem} - it has been removed from the ${menuType} menu!`;
-    //       }
-    //       else {
-    //         continue;
-    //       }
-    //     }
-    //   }
-    //   else {
-    //     return `Sorry, we don't sell ${menuItem}, try adding a new recipe!`
-    //     }
-    //   }
-
-  // else if (menuType === "lunch") {
-  //   for (var i = 0; i < restaurant.menus.lunch.length; i++) {
-  //     if (menuItem === restaurant.menus.lunch[i].name) {
-  //       restaurant.menus.lunch.splice(i, 1);
-  //       var result = `No one is eating our ${menuItem} - it has been removed from the ${menuType} menu!`;
-  //       return result;
-  //     }
-  //     else {
-  //       continue;
-  //     }
-  //   }
-  // }
-
-  else if (menuType === "dinner") {
+  if (menuType === "dinner") {
     for (var i = 0; i < restaurant.menus.dinner.length; i++) {
       if (menuItem === restaurant.menus.dinner[i].name) {
         restaurant.menus.dinner.splice(i, 1);
@@ -129,6 +93,7 @@ console.log("Hello");
         continue;
       }
     }
+    return `Sorry, we don't sell ${menuItem}, try adding a new recipe!`;
   }
 
 }
