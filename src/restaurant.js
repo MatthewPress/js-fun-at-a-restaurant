@@ -43,7 +43,7 @@ function addMenuItem(restaurant, menuItem) {
       return restaurant;
     }
   }
-  
+
 }
 
 
@@ -53,6 +53,11 @@ function addMenuItem(restaurant, menuItem) {
 
 
 function removeMenuItem(restaurant, menuItem, menuType) {
+
+  // Iterate through every menuType and menuItem
+  // for(var x = 0; x < retraunts.menus[menuType].length; x++) {
+  //
+  // }
 
   if (menuType === "breakfast") {
     for (var i = 0; i < restaurant.menus.breakfast.length; i++) {
@@ -68,7 +73,7 @@ function removeMenuItem(restaurant, menuItem, menuType) {
     return `Sorry, we don't sell ${menuItem}, try adding a new recipe!`;
   }
 
-  if (menuType === "lunch") {
+  else if (menuType === "lunch") {
     for (var i = 0; i < restaurant.menus.lunch.length; i++) {
       if (menuItem === restaurant.menus.lunch[i].name) {
         restaurant.menus.lunch.splice(i, 1);
@@ -82,7 +87,7 @@ function removeMenuItem(restaurant, menuItem, menuType) {
     return `Sorry, we don't sell ${menuItem}, try adding a new recipe!`;
   }
 
-  if (menuType === "dinner") {
+  else if (menuType === "dinner") {
     for (var i = 0; i < restaurant.menus.dinner.length; i++) {
       if (menuItem === restaurant.menus.dinner[i].name) {
         restaurant.menus.dinner.splice(i, 1);
