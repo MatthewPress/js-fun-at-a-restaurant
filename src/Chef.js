@@ -1,4 +1,32 @@
+//
+//   function createRestaurant(name) {
+//     var restaurant = {
+//       name: name,
+//       menus: {
+//         breakfast: [],
+//         lunch: [],
+//         dinner: []
+//       }
+//     }
+//     return restaurant;
+//   }
+//
+//   // addMenuItem,
+//   // Refactor: array.includes()
+//
+//   function addMenuItem(restaurant, menuItem) {
+//     if (menuItem.type === "breakfast") {
+//       if (restaurant.menus.breakfast.indexOf(menuItem) < 0) {
+//         restaurant.menus.breakfast.push(menuItem);
+//       }
+//       else {
+//         return restaurant;
+//       }
+//     }
+//   }
+//
 
+// createRestaurant,
 
 class Chef {
   constructor(name, restaurant) {
@@ -17,14 +45,9 @@ class Chef {
 
   checkForFood(foodItem) {
 
-console.log("checkForFood");
-
     if (foodItem.type === "breakfast") {
-console.log("breakfast");
-      for (var i = 0; i < this.menus.breakfast.length; i++) {
-console.log("for");
-        if (foodItem.name === this.menus.breakfast[i].name) {
-console.log("if");
+      for (var i = 0; i < this.restaurant.menus.breakfast.length; i++) {
+        if (foodItem.name === this.restaurant.menus.breakfast[i].name) {
           return `Yes, we're serving ${foodItem.name} today!`
         }
       }
@@ -32,9 +55,8 @@ console.log("if");
     }
 
     if (foodItem.type === "lunch") {
-console.log("lunch");
-      for (var i = 0; i < this.menus.lunch.length; i++) {
-        if (foodItem.name === this.menus.lunch[i].name) {
+      for (var i = 0; i < this.restaurant.menus.lunch.length; i++) {
+        if (foodItem.name === this.restaurant.menus.lunch[i].name) {
           return `Yes, we're serving ${foodItem.name} today!`
         }
       }
@@ -42,17 +64,15 @@ console.log("lunch");
     }
 
     if (foodItem.type === "dinner") {
-console.log("dinner");
-      for (var i = 0; i < this.menus.dinner.length; i++) {
-        if (foodItem.name === this.menus.dinner[i].name) {
+      for (var i = 0; i < this.restaurant.menus.dinner.length; i++) {
+        if (foodItem.name === this.restaurant.menus.dinner[i].name) {
           return `Yes, we're serving ${foodItem.name} today!`
         }
       }
       return `Sorry, we aren't serving ${foodItem.name} today.`
     }
-
   }
-
 }
+
 
 module.exports = Chef;
